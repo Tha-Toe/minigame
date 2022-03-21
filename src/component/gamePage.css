@@ -5,7 +5,7 @@
     justify-content: center;
     height: 100vh;
     width: 100vw;
-    background-color: yellow;
+    background-color: #101820FF;
 }
 .cards {
     display: grid;
@@ -19,7 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #000;
+    background-color: #f2aa4cff;
     border-radius: 5px;
     animation: 5s hideCard linear;
     cursor: pointer;
@@ -95,6 +95,20 @@
     margin-bottom: 50px;
     font-size: 40px;
     font-weight: 700;
+    color: #fee715ff;
+}
+.health {
+    font-size: 30px;
+    color: #ff78ae;
+}
+.healthContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    width: 100px;
+    background: rgba(165, 165, 165, 0.4);
 }
 
 @media (max-width: 560px) {
@@ -103,7 +117,7 @@
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(4, 1fr);
         gap: .5em;
-        width: 50%;
+        width: 70%;
     }
     .start {
         padding: 10px;
@@ -120,6 +134,9 @@
     }
     .warning {
         font-size: 25px;
+    }
+    .healthContainer {
+        height: 50px;
     }
 }
 

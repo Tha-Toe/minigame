@@ -1,0 +1,337 @@
+.contactMainContainer {
+    border-top: 1px solid red;
+    height: 100vh;
+}
+
+.contactContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactHeader {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    margin-top: 50px;
+    font-weight: 700;
+}
+.contact {
+    color: #fff;
+    margin-right: 10px;
+    letter-spacing: 4px;
+    position: relative;
+    background-color: #101820FF;
+    padding: 20px;
+}
+.contactAnimation {
+    animation: cAnimation 3s 1;
+}
+
+@keyframes cAnimation {
+    0% {
+        color: #000;
+        margin-right: -80px;
+    }
+    30% {
+        letter-spacing: 25px;
+        margin-right: -80px;
+    }
+    85% {
+        letter-spacing: 8px;
+        margin-right: -80px;
+    }
+    95% {
+        text-shadow: #fff;
+    }
+}
+
+.me {
+    color: #fff;
+    background-color: blue;
+    align-items: center;
+    width: 80px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.contactLeft {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactCard {
+    position: relative;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px rgba(255,255,255,0.4), -3px -3px 5px rgba(255,255,255,0.4), 10px 10px 20px rgba(255,255,255,0.1), -10px -10px 20px rgba(255,255,255,0.2);
+}
+.contactCardAnimation {
+    animation:  cmAnimation 1.5s 1;
+}
+
+@keyframes cmAnimation {
+    from{left: -100px;}
+    to{left: 0px;}
+}
+
+.addressContainer {
+    width: 70%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.addressIcon {
+    color: blue;
+    font-size: 24px;
+    margin-right: 10px;
+}
+.addressNote {
+    color: #fff;
+}
+.addressLink:hover {
+    color: blue;
+}
+
+.contactRight {
+    height: 100%;
+    width: 50%;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.skillHeader {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.skillCard {
+    position: relative;
+    width: 50%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px rgba(255,255,255,0.4), -3px -3px 5px rgba(255,255,255,0.4), 10px 10px 20px rgba(255,255,255,0.1), -10px -10px 20px rgba(255,255,255,0.2);
+}
+
+.skillCardAnimation {
+    animation:  skAnimation 1.5s 1;
+}
+
+
+@keyframes skAnimation {
+    from{right: -100px;}
+    to{right: 0px;}
+} 
+
+.skillProgressContainer {
+    width: 80%;
+    margin-bottom: 15px;
+}
+.skillContainer {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.skillText {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+
+.progressBar {
+    width: 100%;
+    background-color: gray;
+    height: 10px;
+    border-radius: 5px;
+}
+.childProgressBar {
+    height: 100%;
+    border-radius: 5px;
+}
+.html {
+    background-color: purple;
+    width: 90%;
+}
+.htmlAnimation {
+    animation: progressAnimation 5s 1;
+}
+.css {
+    background-color: green;
+    width: 75%;
+}
+.bootstrap {
+    background-color: blue;
+    width: 80%;
+}
+.javascript {
+    background-color: yellow;
+    width: 80%;
+}
+.react {
+    background-color: red;
+    width: 70%;
+}
+@keyframes progressAnimation {
+    from {width: 0px;}
+}
+
+@media (max-width: 1200px) {
+
+
+    .contactContainer {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .contactLeft {
+        height: auto;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+    .contactRight {
+        height: auto;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+    .addressContainer{
+        width: 90%;
+    }
+    .addressIcon {
+        color: blue;
+        font-size: 24px;
+        margin-left: 20px;
+    }
+
+}
+@media (max-width: 760px) {
+
+    .contactMainContainer {
+        width: 100%;
+    }
+    .contactContainer {
+        width: 100%;
+    }
+    .contactCard {
+        width: 100%;
+    }
+    .skillCard {
+        width: 100%;
+    }
+    .contactLeft {
+        height: auto;
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+    .contactRight {
+        height: auto;
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+    .contactHeader {
+        margin-bottom: 50px;
+    }
+    .contactCard {
+        padding-top: 20px;
+    }
+}
+@media (max-width: 520px) {
+    .contact {
+        margin-right: 0px;
+        padding: 20px 10px;
+    }
+    .me {
+        width: 50px;
+        height: 37px;
+    }
+    .contactHeader {
+        margin-bottom: 50px;
+        font-size: 20px;
+    }
+    .addressNote {
+        font-size: 14px;
+    }
+    .contactCard {
+        padding-top: 20px;
+    }
+    @keyframes cAnimation {
+        0% {
+            color: #000;
+            margin-right: -80px;
+        }
+        30% {
+            letter-spacing: 15px;
+            margin-right: -80px;
+        }
+        85% {
+            letter-spacing: 4px;
+            margin-right: -80px;
+        }
+        95% {
+            text-shadow: #fff;
+        }
+    }
+}
+@media (max-width: 320px) {
+    .addressNote {
+        font-size: 14px;
+    }
+    .contactHeader {
+        font-size: 30px;
+    }
+}

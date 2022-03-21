@@ -4,6 +4,8 @@ import {Link} from "react-router-dom";
 import {motion} from "framer-motion";
 import {useInView} from "react-intersection-observer";
 import {useState,useEffect} from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCirclePlay,faLightbulb } from "@fortawesome/free-solid-svg-icons";
 
 function Home () {
     const {ref: homeRef, inVIew: homeInView} = useInView();
@@ -30,8 +32,17 @@ function Home () {
                 position: "relative",
                 scale: [1,1.4,1.2],
                 transition: {duration: .2},
-            }}>Play</motion.button>
+            }}><FontAwesomeIcon icon={faCirclePlay} className="play"/><span>Play</span></motion.button>
             </Link>
+            <div>
+                <Link to="/contact">
+                    <motion.button whileHover = {{
+                        position: "relative",
+                        scale: [1,1.4,1.2],
+                        transition: {duration: .2},}}
+                        className="contactButton"><FontAwesomeIcon icon={faLightbulb} className="play"/><span>Contact Tha Toe</span></motion.button>
+                </Link>
+            </div>
         </div>
     )
 }

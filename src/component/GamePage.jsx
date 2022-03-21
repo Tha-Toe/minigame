@@ -3,7 +3,7 @@ import {useState,useEffect} from "react";
 import "../component/gamePage.css";
 import GameCard from "./GameCard";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowRightFromBracket} from "@fortawesome/free-solid-svg-icons";
+import {faArrowRightFromBracket,faHeartCircleBolt,faCirclePlay} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import {useInView} from "react-intersection-observer";
 import {motion} from "framer-motion";
@@ -47,6 +47,10 @@ function GamePage () {
             cards[current].stat = "wrongCard";
             cards[prev].stat = "wrongCard";
             setCards([...cards]);
+            setTimer(timer-1);
+            if(timer===1) {
+                setLose(true);
+            }
             setTimeout(() => {
                 cards[current].stat = "";
                 cards[prev].stat = "";
@@ -56,12 +60,13 @@ function GamePage () {
             setCardDelay(true);
             setTimeout(() => {
                 setCardDelay(false);
-            },1300)
+            },1000)
         }
     }
 
     const handleClick = (id) => {
         if(!cardDelay) {
+            if(!cards[id].stat) {
             if (startValue<1) {
                 if(prev === -1) {
                     cards[id].stat = "activeCard";
@@ -74,6 +79,7 @@ function GamePage () {
                 }
             }
         }
+        }
     }
 
     const[win,setWin] = useState(0);
@@ -83,7 +89,7 @@ function GamePage () {
 
     const [startValue,setStartValue] = useState(5);
     const [visible,setVisible] = useState(false);
-    const [timer,setTimer] = useState(30);
+    const [timer,setTimer] = useState(15);
     const [fullTime,setFullTime] = useState(false);
     const [interv,setInterv] = useState();
 
@@ -116,13 +122,7 @@ function GamePage () {
 
     const runTime = () => {
         if(startValue < 1) {
-            if(timer === 0) {
-                setFullTime(true);
-                setLose(true);
-                return;
-            }else {
-                setTimer(timer-1);
-            }
+            return;
         }else{
         setStartValue(startValue-1);
         }
@@ -130,8 +130,9 @@ function GamePage () {
 
     return (
         <div className="gamePageContainer">
+
             <div className="timer">
-                <div className={`${timer<5? "warning":""}`}>{startValue<1 ? `seconds left - ${timer}`:`Ready - ${startValue}`}</div>
+                <div>{startValue<1 ?<div className="healthContainer"><FontAwesomeIcon icon={faHeartCircleBolt} className="health"/> <span>{timer}</span></div>:`Ready - ${startValue}`}</div>
             </div>
             <div className="cards" ref={gamePageRef}>
             {cards.map((item,index) => (
